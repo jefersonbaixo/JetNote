@@ -36,6 +36,7 @@ import mastering.andriod.jetnote.components.NoteButton
 import mastering.andriod.jetnote.components.NoteInputText
 import mastering.andriod.jetnote.model.Note
 import mastering.andriod.jetnote.util.DateConverter
+import mastering.andriod.jetnote.util.formatDate
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -128,7 +129,7 @@ fun NoteRow(modifier: Modifier = Modifier, note: Note, onNoteClicked: (Note) -> 
         ) {
             Text(text = note.title, style = MaterialTheme.typography.titleMedium)
             Text(text = note.description, style = MaterialTheme.typography.bodyLarge)
-            Text(text = DateConverter().dateFromTimeStamp(note.entryDate).toString(), style = MaterialTheme.typography.bodySmall)
+            Text(text = formatDate(note.entryDate), style = MaterialTheme.typography.bodySmall)
         }
 
     }

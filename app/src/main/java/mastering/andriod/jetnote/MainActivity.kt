@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun NotesApp(noteViewModel: NoteViewModel = viewModel()) {
+fun NotesApp(noteViewModel: NoteViewModel) {
     val notes = noteViewModel.noteList.collectAsState().value
     NotesScreen(notes = notes, onAddNote = {
         noteViewModel.addNote(it)
